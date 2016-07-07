@@ -13,23 +13,17 @@
 		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
 		<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-		<link rel='stylesheet' href='{% static "css/base.css" %}'>
-
-		{% block styles %}
-
-		{% endblock %}
+		<link rel='stylesheet' href='{% static "css/base.css" %}'> {% block styles %} {% endblock %}
 
 	</head>
 
 	<body>
-		{% block content %}
-		{% endblock %}
+		{% block content %} {% endblock %}
 
 		<!-- jQuery first, then Bootstrap JS. -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-		{% block scripts %}
-		{% endblock %}
+		{% block scripts %} {% endblock %}
 	</body>
 
 	</html>
