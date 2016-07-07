@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<nav class='navbar navbar-dark material-green navbar-shadow'>
+	<a class="navbar-brand heading" href="/"><h1>MoveMint</h1></a>
+	<i class='fa fa-3x fa-bars pull-xs-right'></i>
+</nav>
+
+<div class='container content'>
+	<div class='card card-shadow'>
+
+		<h4 class='card-title'>Profile</h4>
+		<h5 class='card-title'>Name: {{ user.first_name }} {{ user.last_name}}</h5>
+
+		<a href='/me/logout'>Logout</a>
+	</div>
+	{% if perms.organization.can_add %}
+	<div class='card card-shadow'>
+
+		<h4 class='card-title'>Create Organzation</h4>
+
+		<p class='card-text text-muted'>Hi, your account has been enabled to create and manage an organization! Use the button below
+		to start creating your organization. You can find a list of the ones you manage below.</p>
+		<a href="/orgs/create" class="btn btn-orange btn-lg" role="button">Create Organization</a>
+	</div>
+	{% endif %}
+</div>
+<footer class='footer'>
+	<div class='container'>
+		<div class='row text-xs-center'>
+			<div class='col-xs-4'><a href='/projects'><i class='fa fa-3x fa-feed text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/orgs'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+			<div class='col-xs-4 green-active'><i class='fa fa-3x fa-user text-xs-center'></i></div>
+		</div>
+	</div>
+</footer>
+{% endblock %}

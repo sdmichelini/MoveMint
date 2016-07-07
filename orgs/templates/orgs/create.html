@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<nav class='navbar navbar-dark material-green navbar-shadow'>
+	<a class="navbar-brand heading" href="/"><h1>MoveMint</h1></a>
+	<i class='fa fa-3x fa-bars pull-xs-right'></i>
+</nav>
+
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-8 col-md-offset-2'>
+			<div class='card content card-shadow'>
+				<div class='card-title'>
+					<h4>Create Organization</h4>
+				</div>
+				<div class='card-text text-muted'>
+					An organization will allow you to create projects that a user can donate to for that organization.
+				</div>
+				<hr>
+				<form action='' method='POST'>
+					{% csrf_token %}
+					<fieldset class='form-group'>
+						<label for='formGroupName'>Name</label>
+						<input type='text' name='username' class='form-control' id='formGroupName' placeholder="Name">
+					</fieldset>
+					<fieldset class='form-group'>
+						<label for='formGroupAbout'>About</label>
+						<textarea class='form-control' id='formGroupAbout' rows='3'></textarea>
+					</fieldset>
+					<button type='submit' class='btn btn-orange btn-lg'>Login</button>
+				</form>
+				{% if error %}
+				<div class="alert alert-danger" role="alert">
+					{{ error }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+<footer class='footer'>
+	<div class='container'>
+		<div class='row text-xs-center'>
+			<div class='col-xs-4'><a href='/projects'><i class='fa fa-3x fa-feed text-xs-center'></i></a></div>
+			<div class='col-xs-4 green-active'><a href='#'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/me'><i class='fa fa-3x fa-user text-xs-center'></i></a></div>
+		</div>
+	</div>
+</footer>
+{% endblock %}

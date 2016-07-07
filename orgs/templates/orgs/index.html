@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<nav class='navbar navbar-dark material-green navbar-shadow'>
+	<a class="navbar-brand heading" href="#"><h1>MoveMint</h1></a>
+	<i class='fa fa-3x fa-bars pull-xs-right'></i>
+</nav>
+
+<div class='container'>
+{% for org in orgs %}
+
+<div class='card card-shadow'>
+	<div class='container content'>
+		<h4 class='card-title'>{{ org.name }}</h4>
+		<p class='card-text text-muted'>{{ org.about }}</p>
+		<a href="/org/{{ org.id }}" class="btn btn-orange btn-lg" role="button">See Organization</a>
+	</div>
+</div>
+
+{% endfor %}
+</div>
+<footer class='footer'>
+	<div class='container'>
+		<div class='row text-xs-center'>
+			<div class='col-xs-4'><a href='/'><i class='fa fa-3x fa-feed text-xs-center'></i></a></div>
+			<div class='col-xs-4 green-active'><a href='#'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/me'><i class='fa fa-3x fa-user text-xs-center'></i></a></div>
+		</div>
+	</div>
+</footer>
+{% endblock %}

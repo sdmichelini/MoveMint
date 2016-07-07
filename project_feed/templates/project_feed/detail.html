@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<nav class='navbar navbar-dark material-green navbar-shadow'>
+	<a class="navbar-brand heading" href="/"><h1>MoveMint</h1></a>
+	<i class='fa fa-3x fa-bars pull-xs-right'></i>
+</nav>
+
+<div class='container'>
+
+<div class='card card-shadow'>
+	<div class='container content'>
+		<h4 class='card-title'>{{ project.name }}</h4>
+		<p class='card-text text-muted'>{{ project.about }}</p>
+		<progress class="progress progress-success" value="{{ project.donation_amount }}" max="{{ project.donation_goal }}"></progress>
+		<p class='card-text'>Raised ${{ project.donation_amount }} of ${{ project.donation_goal }}</p>
+		<a href="/projects/{{ project.id }}/donate" class="btn btn-orange btn-lg" role="button">Donate</a>
+	</div>
+</div>
+
+</div>
+<footer class='footer'>
+	<div class='container'>
+		<div class='row text-xs-center'>
+			<div class='col-xs-4 green-active'><i class='fa fa-3x fa-feed text-xs-center'></i></div>
+			<div class='col-xs-4'><a href='/orgs'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/me'><i class='fa fa-3x fa-user text-xs-center'></i></a></div>
+		</div>
+	</div>
+</footer>
+{% endblock %}
