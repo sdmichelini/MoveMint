@@ -1,0 +1,20 @@
+<footer class='footer'>
+	<div class='container'>
+		<div class='row text-xs-center'>
+			{% if app and app == 3 %}
+			<div class='col-xs-4'><a href='/projects'><i class='fa fa-3x fa-feed text-xs-center'></i></a></div>
+		   	<div class='col-xs-4'><a href='/orgs'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+		   	<div class='col-xs-4 green-active'><a href='#'><i class='fa fa-3x fa-user text-xs-center'></i></a></div>
+			{% elif app == 2%}
+			<div class='col-xs-4'><a href='/projects'><i class='fa fa-3x fa-feed text-xs-center'></i></a></div>
+			<div class='col-xs-4 green-active'><a href='#'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/me'><i class='fa fa-3x fa-user text-xs-center'></i></a></div>
+			{% else %}
+			<div class='col-xs-4 green-active'><a href='#'><i class='fa fa-3x fa-feed text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/orgs'><i class='fa fa-3x fa-tree text-xs-center'></i></a></div>
+			<div class='col-xs-4'><a href='/me'><i class='fa fa-3x fa-user text-xs-center'></i></a></div>
+			{% endif %}
+
+		</div>
+	</div>
+</footer>

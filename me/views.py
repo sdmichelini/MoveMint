@@ -32,4 +32,4 @@ def signup(request):
 
 def logout_view(request):
 	logout(request)
-	return redirect('me/login')
+	return render(request, 'me/login.html', {})
