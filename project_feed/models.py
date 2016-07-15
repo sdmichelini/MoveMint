@@ -33,11 +33,11 @@ class Project(models.Model):
 	name = models.CharField(max_length = 50)
 	about = models.TextField()
 	org = models.ForeignKey(Organization)
-	donation_amount = models.DecimalField(max_digits = 10, decimal_places = 2)
+	donation_amount = models.DecimalField(max_digits = 10, decimal_places = 2, default=0.0)
 	donation_goal = models.DecimalField(max_digits = 10, decimal_places = 2)
 	start_date = models.DateField()
 	end_date = models.DateField()
-	tags = models.ManyToManyField(Tag)
+	tags = models.ManyToManyField(Tag, blank=True)
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 	def __str__(self):
 		return self.name
