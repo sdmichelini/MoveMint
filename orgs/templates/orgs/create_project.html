@@ -12,8 +12,11 @@
 
 <div class='card card-shadow'>
 	<div class='container content'>
-		{% csrf_token %}
-		{{ form.as_p }}
+		<form action='' method='POST'>
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type='submit' class='btn btn-orange btn-lg'>Create Project</button>
+		</form>
 	</div>
 </div>
 

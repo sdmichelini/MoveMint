@@ -14,6 +14,14 @@ Django, Django Templates
 
 Bootstrap 4, We need a JS library at some point
 
+## Todo ##
+
+- [ ] Allow Users to Signup/allow Facebook sign-in too
+- [ ] Allow Projects to Accept Donations
+- [ ] Start Testing Django
+- [ ] More Documentation
+
+
 ## Django Applications ##
 
 ### movemint ###

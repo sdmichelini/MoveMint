@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import permission_required
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 # Models
-from project_feed.models import Organization
+from project_feed.models import Organization, Project
 
 from .forms import ProjectForm
 
@@ -26,8 +26,23 @@ def detail(request, uuid):
 def create_project(request, uuid):
 	org = get_object_or_404(Organization, id=uuid)
 	if does_user_own(request.user, org):
-		form = ProjectForm()
-		return render(request, 'orgs/create_project.html', {'form': form})
+
+		if request.method == 'POST':
+			form = ProjectForm(request.POST)
+			if form.is_valid():
+				proj = Project(name = form.cleaned_data['name'],
+ 								about = form.cleaned_data['about'],
+								org = org,
+								donation_goal = form.cleaned_data['donation_goal'],
+								start_date = form.cleaned_data['start_date'],
+								end_date = form.cleaned_data['end_date'])
+				proj.save()
+				return redirect('/')
+			else:
+				return render(request, 'orgs/create_project.html', {'form': form})
+		else:
+			form = ProjectForm()
+			return render(request, 'orgs/create_project.html', {'form': form})
 	else:
 		return redirect('index')
 
