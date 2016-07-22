@@ -10,3 +10,10 @@ def index(request):
 def detail(request, uuid):
 	project = get_object_or_404(Project, id=uuid)
 	return render(request,'project_feed/detail.html',{'project': project})
+
+def donate(request, uuid):
+	project = get_object_or_404(Project, id=uuid)
+	if request.method == 'POST':
+		return HttpResponse('Stripe Token'+ request.POST['stripeToken'])
+	else:
+		return render(request,'project_feed/donate.html',{'project': project})
