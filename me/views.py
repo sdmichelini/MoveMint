@@ -28,8 +28,10 @@ def login_view(request):
 		return render(request, 'me/login.html', {})
 
 def signup(request):
-	return render(request, 'me/singup.html', {})
+	if request.user.is_authenticated():
+		return redirect('index')
+	return render(request, 'me/signup.html', {})
 
 def logout_view(request):
 	logout(request)
-	return render(request, 'me/login.html', {})
+	return redirect('login')

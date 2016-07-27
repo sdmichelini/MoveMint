@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<nav class='navbar navbar-dark material-green navbar-shadow'>
+	<a class="navbar-brand heading" href="/"><h1>MoveMint</h1></a>
+	<i class='fa fa-3x fa-bars pull-xs-right'></i>
+</nav>
+
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-8 col-md-offset-2'>
+			<div class='card content card-shadow'>
+				<div class='card-title'>
+					<h4>Sign-Up</h4>
+				</div>
+				<div class='card-text text-muted'>
+					Sign-Up for MoveMint
+				</div>
+				<hr>
+				<form action='' method='POST'>
+					{% csrf_token %}
+					<fieldset class='form-group'>
+						<label for='formGroupUsername'>Username</label>
+						<input type='text' name='username' class='form-control' id='formGroupUsername' placeholder="Username">
+					</fieldset>
+					<fieldset class='form-group'>
+						<label for='formGroupUsername'>E-Mail</label>
+						<input type='email' name='email' class='form-control' id='formGroupEmail' placeholder="Email">
+					</fieldset>
+					<fieldset class='form-group'>
+						<label for='formGroupPassword'>Password</label>
+						<input type='password' name='password' class='form-control' id='formGroupPassword' placeholder="Password">
+					</fieldset>
+					<fieldset class='form-group'>
+						<label for='formGroupPassword'>Confirm Password</label>
+						<input type='password' name='password2' class='form-control' id='formGroupPassword2' placeholder="Password">
+					</fieldset>
+					<button type='submit' class='btn btn-orange btn-lg'>Sign-Up</button>
+				</form>
+				{% if error %}
+				<div class="alert alert-danger" role="alert">
+					{{ error }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% include "footer.html" with app=3 %}
+{% endblock %}
