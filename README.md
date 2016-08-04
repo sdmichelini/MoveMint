@@ -18,6 +18,7 @@ Bootstrap 4, We need a JS library at some point
 
 - [ ] Allow Users to Signup/allow Facebook sign-in too
 - [ ] Allow Projects to Accept Donations
+- [ ] Make Donation Model
 - [ ] Start Testing Django
 - [ ] More Documentation
 

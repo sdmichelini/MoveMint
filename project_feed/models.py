@@ -55,3 +55,12 @@ class ProjectUpdate(models.Model):
 	project = models.ForeignKey(Project)
 	def __str__(self):
 		return self.name
+
+@python_2_unicode_compatible
+class Donation(models.Model):
+	user = models.ForiegnKey(User)
+	amount = models.DecimalField(max_digits = 10, decimal_places = 2)
+	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+	date = models.DateField(auto_now_add=True)
+	def __str__(self):
+		return str(self.amount)
