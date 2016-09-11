@@ -21,15 +21,18 @@ Bootstrap 4, We need a JS library at some point
 - [ ] Allow Users to Signup/allow Facebook sign-in too
 - [ ] Connect Sign-Up to Regions/Issues
 - [ ] Integrate Regions Issues into Feed
+- [ ] Make it more friendly
 
 ### Projects ###
 
 - [ ] Allow Projects to Accept Donations
+- [ ] Do Stripe Calls (StripeJS)
 
 ### Overall ###
 
 - [ ] Start Testing Django
 - [ ] More Documentation
+- [ ] Ensure UI is consistent
 
 
 ## Django Applications ##
