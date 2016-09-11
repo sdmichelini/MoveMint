@@ -31,6 +31,12 @@
 	color: #fff;
 	background-color: #EF6C00;
 	border-color: #EF6C00;
+	box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 8px 24px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-orange:hover {
+	color: rgb(220,220,220);
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 16px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card-shadow {
@@ -47,6 +53,32 @@
  color: inherit;
 }
 
+.col-xs-4 > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.col-xs-4 > a:hover {
+	background-color: #77A055;/*#1B5E20;#A5D6A7*/
+}
+
+.green-active > a:hover {
+	background-color: #A5D6A7;
+}
+
 html,body{
     height: 100%
+}
+
+#payment-form {
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-shadow:last-child{
+	margin-bottom: 100px;
 }

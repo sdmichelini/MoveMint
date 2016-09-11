@@ -58,7 +58,7 @@ class ProjectUpdate(models.Model):
 
 @python_2_unicode_compatible
 class Donation(models.Model):
-	user = models.ForiegnKey(User)
+	user = models.ForeignKey(User)
 	amount = models.DecimalField(max_digits = 10, decimal_places = 2)
 	id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 	date = models.DateField(auto_now_add=True)

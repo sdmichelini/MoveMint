@@ -16,9 +16,18 @@ Bootstrap 4, We need a JS library at some point
 
 ## Todo ##
 
+### User Interaction ###
+
 - [ ] Allow Users to Signup/allow Facebook sign-in too
+- [ ] Connect Sign-Up to Regions/Issues
+- [ ] Integrate Regions Issues into Feed
+
+### Projects ###
+
 - [ ] Allow Projects to Accept Donations
-- [ ] Make Donation Model
+
+### Overall ###
+
 - [ ] Start Testing Django
 - [ ] More Documentation
 

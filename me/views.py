@@ -32,6 +32,16 @@ def signup(request):
 		return redirect('index')
 	return render(request, 'me/signup.html', {})
 
+@login_required
+def signup_issues(request):
+	return render(request, 'me/signup_list.html', {"items": ["Water", "Health", "Pregnancy", "Alcoholism"],
+													"name":"Issues"})
+
+@login_required
+def signup_regions(request):
+	return render(request, 'me/signup_list.html', {"items": ["Africa", "America", "Europe", "Groton, CT"],
+													"name":"Regions"})
+
 def logout_view(request):
 	logout(request)
 	return redirect('login')
