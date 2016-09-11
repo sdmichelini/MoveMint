@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<nav class='navbar navbar-dark material-green navbar-shadow'>
+	<a class="navbar-brand heading" href="/"><h1>MoveMint</h1></a>
+	<i class='fa fa-3x fa-bars pull-xs-right'></i>
+</nav>
+
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-8 col-md-offset-2'>
+			<div class='card content card-shadow'>
+				<div class='card-title'>
+					<h4>Sign-Up {{ name }}</h4>
+				</div>
+				<p class='card-text text-muted'>
+					Help us identify some regions you identify with.
+				</p>
+				<hr>
+
+        <ul class="list-group">
+          {% for item in items %}
+          <li class="list-group-item">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              <span class="custom-control-description">{{item}}</span>
+            </label>
+          </li>
+          {% endfor %}
+        </ul>
+        <button class='btn btn-orange btn-lg'>Commit</button>
+				{% if error %}
+				<div class="alert alert-danger" role="alert">
+					{{ error }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+{% include "footer.html" with app=3 %}
+{% endblock %}
